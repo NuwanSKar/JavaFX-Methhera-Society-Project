@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="668.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainInterfController">
+   <children>
+      <Label alignment="CENTER" layoutX="8.0" layoutY="3.0" prefHeight="17.0" prefWidth="621.0" style="-fx-font-weight: 700;" text="Methhera Society" textFill="#16018d">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Label>
+      <Pane layoutX="10.0" layoutY="44.0" prefHeight="309.0" prefWidth="301.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceded" height="309.0" layoutX="-1.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="299.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="3.0" prefHeight="17.0" prefWidth="232.0" style="-fx-font-weight: 700;" text="Register new member">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="41.0" prefHeight="17.0" prefWidth="49.0" style="-fx-font-weight: 700;" text="Name" />
+            <TextField fx:id="nameInput" layoutX="77.0" layoutY="37.0" prefHeight="25.0" prefWidth="212.0" />
+            <Label layoutX="8.0" layoutY="75.0" prefHeight="17.0" prefWidth="49.0" style="-fx-font-weight: 700;" text="Age" />
+            <Label layoutX="8.0" layoutY="108.0" prefHeight="17.0" prefWidth="69.0" style="-fx-font-weight: 700;" text="National ID" />
+            <Label layoutX="9.0" layoutY="144.0" prefHeight="17.0" prefWidth="57.0" style="-fx-font-weight: 700;" text="District" />
+            <Label layoutX="8.0" layoutY="183.0" prefHeight="17.0" prefWidth="57.0" style="-fx-font-weight: 700;" text="Reg. year" />
+            <TextField fx:id="ageInput" layoutX="77.0" layoutY="71.0" prefHeight="25.0" prefWidth="212.0" />
+            <TextField fx:id="idInput" layoutX="78.0" layoutY="106.0" prefHeight="25.0" prefWidth="212.0" />
+            <TextField fx:id="distInput" layoutX="78.0" layoutY="141.0" prefHeight="25.0" prefWidth="212.0" />
+            <TextField fx:id="yearInput" layoutX="77.0" layoutY="177.0" prefHeight="25.0" prefWidth="212.0" />
+            <Button alignment="CENTER" layoutX="5.0" layoutY="256.0" mnemonicParsing="false" onAction="#regButton" prefHeight="38.0" prefWidth="76.0" style="-fx-font-weight: 700;" text="Register">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="showRegNo" layoutX="94.0" layoutY="249.0" prefHeight="52.0" prefWidth="198.0" text="Your Society ID will be display here after registration" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="217.0" prefHeight="17.0" prefWidth="57.0" style="-fx-font-weight: 700;" text="Phone no" />
+            <TextField fx:id="phoneNumber" layoutX="76.0" layoutY="213.0" prefHeight="25.0" prefWidth="212.0" />
+         </children>
+      </Pane>
+      <Line endX="-100.0" endY="466.0" layoutX="422.0" layoutY="44.0" startX="-100.00003051757812" startY="6.333332061767578" />
+      <Line endX="539.0" layoutX="115.0" layoutY="38.0" startX="-105.0" startY="-3.814697265625E-6" />
+      <Pane layoutX="12.0" layoutY="363.0" prefHeight="152.0" prefWidth="301.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceded" height="152.0" layoutX="-3.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="299.0" />
+            <Label layoutX="11.0" layoutY="77.0" prefHeight="17.0" prefWidth="87.0" style="-fx-font-weight: 700;" text="Amount in Rs" />
+            <TextField fx:id="societyIdInput" layoutX="103.0" layoutY="36.0" prefHeight="25.0" prefWidth="185.0" />
+            <TextField fx:id="amountInput" layoutX="103.0" layoutY="71.0" prefHeight="25.0" prefWidth="185.0" />
+            <Button alignment="CENTER" layoutX="10.0" layoutY="109.0" mnemonicParsing="false" onAction="#donateButton" prefHeight="30.0" prefWidth="280.0" style="-fx-font-weight: 700;" text="Donate to the Soceity" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="1.0" prefHeight="17.0" prefWidth="232.0" style="-fx-font-weight: 700;" text="Donate to the Society">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="41.0" prefHeight="17.0" prefWidth="87.0" style="-fx-font-weight: 700;" text="Society ID" />
+         </children>
+      </Pane>
+      <AnchorPane layoutX="330.0" layoutY="57.0" prefHeight="268.0" prefWidth="331.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceded" height="80.0" layoutX="3.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" width="327.0" />
+            <Label layoutX="8.0" layoutY="26.0" prefHeight="38.0" prefWidth="76.0" style="-fx-font-weight: 700;" text="Input Society ID" wrapText="true" />
+            <TextField fx:id="search" layoutX="88.0" layoutY="30.0" prefHeight="25.0" prefWidth="142.0" />
+            <Button alignment="CENTER" layoutX="237.0" layoutY="28.0" mnemonicParsing="false" onAction="#setSearch" prefHeight="30.0" prefWidth="87.0" style="-fx-font-weight: 700;" text="Search" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="-10.0" prefHeight="30.0" prefWidth="232.0" style="-fx-font-weight: 700;" text="Show member details">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceded" height="186.0" layoutX="3.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" width="327.0" />
+            <Label layoutX="11.0" layoutY="78.0" prefHeight="17.0" prefWidth="49.0" style="-fx-font-weight: 700;" text="Name" />
+            <Label layoutX="12.0" layoutY="106.0" prefHeight="17.0" prefWidth="49.0" style="-fx-font-weight: 700;" text="Age" />
+            <Label layoutX="11.0" layoutY="136.0" prefHeight="17.0" prefWidth="57.0" style="-fx-font-weight: 700;" text="Phone No" wrapText="true" />
+            <Label layoutX="11.0" layoutY="163.0" prefHeight="17.0" prefWidth="76.0" style="-fx-font-weight: 700;" text="National ID" wrapText="true" />
+            <Label layoutX="12.0" layoutY="190.0" prefHeight="17.0" prefWidth="57.0" style="-fx-font-weight: 700;" text="District" wrapText="true" />
+            <Label fx:id="showNM" layoutX="88.0" layoutY="72.0" prefHeight="30.0" prefWidth="212.0" text=":" />
+            <Label fx:id="showAG" layoutX="87.0" layoutY="108.0" prefHeight="17.0" prefWidth="212.0" text=":" />
+            <Label fx:id="showPN" layoutX="88.0" layoutY="137.0" prefHeight="17.0" prefWidth="212.0" text=":" />
+            <Label fx:id="showID" layoutX="88.0" layoutY="163.0" prefHeight="17.0" prefWidth="212.0" text=":" />
+            <Label fx:id="showDCT" layoutX="87.0" layoutY="192.0" prefHeight="17.0" prefWidth="212.0" text=":" textAlignment="CENTER" />
+            <Label layoutX="12.0" layoutY="213.0" prefHeight="38.0" prefWidth="69.0" style="-fx-font-weight: 700;" text="Donation in Rs" wrapText="true" />
+            <Label fx:id="showDON" layoutX="88.0" layoutY="220.0" prefHeight="17.0" prefWidth="212.0" text=":" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="334.0" layoutY="321.0" prefHeight="109.0" prefWidth="327.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eceded" height="100.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="327.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="13.0" prefHeight="17.0" prefWidth="232.0" style="-fx-font-weight: 700;" text="Unregister a member">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="47.0" prefHeight="38.0" prefWidth="76.0" style="-fx-font-weight: 700;" text="Input Society ID" wrapText="true" />
+            <TextField fx:id="search1" layoutX="82.0" layoutY="51.0" />
+            <Button alignment="CENTER" layoutX="234.0" layoutY="50.0" mnemonicParsing="false" onAction="#unRegister" prefHeight="30.0" prefWidth="87.0" style="-fx-font-weight: 700;" text="Unregister" wrapText="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="logo" fitHeight="73.0" fitWidth="339.0" layoutX="-10.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/E:/My%20projects/JavaFX%20projects/Reg&amp;DonationColl/Methhera_Society/src/application/glo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

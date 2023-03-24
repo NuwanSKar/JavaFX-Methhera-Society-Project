@@ -1,0 +1,6 @@
+package application;
+
+public class displayData {
+	private String NmClId;
+	private String SocInxClId;
+}

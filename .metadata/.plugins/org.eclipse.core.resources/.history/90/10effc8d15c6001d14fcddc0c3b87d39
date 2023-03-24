@@ -1,0 +1,17 @@
+package application;
+
+public class displayData {
+	private String NmClId;
+	private String SocInxClId;
+	private int TDonClId;
+	
+	public displayData(String NmClId, String SocInxClId, int TDonClId) {
+		this.NmClId = NmClId;
+		this.SocInxClId = SocInxClId;
+		this.TDonClId = TDonClId;
+	}
+	
+	
+	
+	
+}

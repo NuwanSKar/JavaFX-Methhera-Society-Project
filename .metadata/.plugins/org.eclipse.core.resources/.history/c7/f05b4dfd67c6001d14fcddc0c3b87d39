@@ -1,0 +1,26 @@
+package application;
+
+public class displayData {
+	private String NmClId;
+	private String SocInxClId;
+	private Integer TDonClId;
+	
+	public displayData(String NmClId, String SocInxClId, Integer TDonClId) {
+		this.NmClId = NmClId;
+		this.SocInxClId = SocInxClId;
+		this.TDonClId = TDonClId;
+	}
+	
+	public String getNmClId() {
+		return NmClId;
+	}
+	
+	public String getSocInxClId() {
+		return SocInxClId;
+	}
+	public int getTDonClId() {
+		return TDonClId;
+	}
+	
+	
+}

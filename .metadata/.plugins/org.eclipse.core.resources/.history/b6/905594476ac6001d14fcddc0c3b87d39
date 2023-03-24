@@ -1,0 +1,38 @@
+package application;
+
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class displayData {
+    private final StringProperty NmClId;
+    private final StringProperty SocInxClId;
+    private final IntegerProperty TDonClId;
+
+    
+    public displayData(){
+    	NmClId = new SimpleStringProperty(this, "NmClId");
+    	SocInxClId = new SimpleStringProperty(this, "SocInxClId");
+    	TDonClId = new SimpleIntegerProperty(this, "TDonClId");
+    
+    }
+ 
+    public StringProperty NmClIdProperty() { return NmClId; }
+    public String getNmClId() { return NmClId.get(); }
+    public void setNmClId(String newNmClId) { NmClId.set(newNmClId); }
+ 
+    public StringProperty SocInxClIdProperty() { return SocInxClId; }
+    public String getSocInxClId() { return SocInxClId.get(); }
+    public void setSocInxClId(String newSocInxClId) { SocInxClId.set(newSocInxClId); }
+ 
+    public StringProperty mobileProperty() { return mobile; }
+    public String getMobile() { return mobile.get(); }
+    public void setMobile(String newMobile) { mobile.set(newMobile); }
+    
+    public StringProperty courseProperty() { return course; }
+    public String getCourse() { return course.get(); }
+    public void setCourse(String newCourse) { course.set(newCourse); }
+	
+	
+}

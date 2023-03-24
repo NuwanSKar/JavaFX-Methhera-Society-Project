@@ -1,0 +1,192 @@
+package application;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Random;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+public class mainInterfController {
+	@FXML
+	private TextField nameInput;
+	@FXML
+	private TextField ageInput;
+	@FXML
+	private TextField idInput;
+	@FXML
+	private TextField distInput;
+	@FXML
+	private TextField yearInput;
+	@FXML
+	private Label showRegNo;
+	
+	@FXML
+	private TextField societyIdInput;
+	@FXML
+	private TextField amountInput;
+
+
+//	String societyIdI = societyIdInput.getText();
+//	int amountI = Integer.parseInt(amountInput.getText());
+	
+	public void test(ActionEvent event) {
+		System.out.println("Test 1234");
+	}
+	
+	
+	
+	
+	public String generateSocietyId() {	
+		System.out.println("Test 8");
+		String databaseName = "sqltest";
+		String url = "jdbc:mysql://localhost:3306/" + databaseName;
+		String userName = "root";
+		String userPassword = "root";
+		String query = "SELECT COUNT(*) from methherasociety";
+		int no1 = 1;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connection1 = DriverManager.getConnection(url, userName, userPassword );
+			Statement statement1 = connection1.createStatement();
+			ResultSet result1 = statement1.executeQuery(query);   	
+			while(result1.next()) {				
+				no1 += result1.getInt(1);
+			}
+			connection1.close();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		int year = Integer.parseInt(yearInput.getText());
+		String Alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		Random rnd = new Random();
+		char c = Alph.charAt(rnd.nextInt(Alph.length()));
+		String strYr = Integer.toString(year);
+		
+		String indNo = null;
+		if (no1<10) {
+			indNo = "00"+String.valueOf(no1);
+		}
+		else if ((10<=no1) && (no1<100)) {
+			indNo = "0"+String.valueOf(no1);
+		}
+		else if ((100<=no1) && (no1<1000)) {
+			indNo = String.valueOf(no1);
+		}
+		
+		String societyIdI = String.valueOf(Integer.parseInt(strYr.substring(strYr.length()-2))) + indNo +c;
+		System.out.println("Test 9");
+		return societyIdI;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public void regButton(ActionEvent event) {
+		
+		System.out.println("Test 1");
+		
+		String nameI = nameInput.getText();
+		int ageI = Integer.parseInt(ageInput.getText());
+		String idI = idInput.getText();
+		String distI = distInput.getText();
+		int yearI = Integer.parseInt(yearInput.getText());
+		
+		System.out.println("Test 2");
+		
+		String databaseName = "sqltest";
+		String url = "jdbc:mysql://localhost:3306/" + databaseName;
+		String userName = "root";
+		String userPassword = "root";
+		System.out.println("Test 6");
+//		String query = "INSERT INTO methherasociety (Society_id, Name, National_id, District, Age, Reg_year ) values (?,?,?,?,?,?)";
+		System.out.println("Test 7");
+		try {
+			
+			System.out.println("Test 3");
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connection1 = DriverManager.getConnection(url, userName, userPassword );
+			
+//			Statement statement1 = connection1.createStatement();
+//			statement1.executeUpdate(query);
+			
+			PreparedStatement pst = connection1.prepareStatement("INSERT INTO methherasociety (Society_id, Name, National_id, District, Age, Reg_year ) values (?,?,?,?,?,?)");
+			pst.setString(1, generateSocietyId());
+			pst.setString(2,nameI);
+			pst.setString(3,idI);
+			pst.setString(4, distI);
+			pst.setInt(5,ageI);
+			pst.setInt(6,yearI);
+			pst.executeUpdate();
+			
+			showRegNo.setText("Your Methhera register no is: " + generateSocietyId());
+			connection1.close();
+		}
+		catch (Exception e) {
+			System.out.println("Test 5");
+			System.out.println(e);
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public void showButton(ActionEvent event) {
+		String databaseName = "sqltest";
+		String url = "jdbc:mysql://localhost:3306/" + databaseName;
+		String userName = "root";
+		String userPassword = "root";
+		String query = "SELECT * from methherasociety";  
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connection1 = DriverManager.getConnection(url, userName, userPassword );
+			Statement statement1 = connection1.createStatement();
+
+			
+			ResultSet result1 = statement1.executeQuery(query);   	
+			String name;		
+			int age;		
+			while(result1.next()) {				
+				name = result1.getString(1);
+				age = result1.getInt(2);
+				System.out.println(name +" "+ age);
+			}
+			connection1.close();
+		}
+		catch (Exception e) {
+			System.out.println("Test 4");
+			System.out.println(e);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+}
